@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tryWeb', views.tryWeb, name='tryWeb'),
 
+    path('MainPage', views.MainPage, name='MainPage'),
 ]
