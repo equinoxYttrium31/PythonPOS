@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create Customer</title>
 </head>
 <body>
-
+    <h2>Create Customer Account</h2>
+    <form action="{% url 'SaveUser' %}">
+        Customer Number: <input type="text" name="CustomerNumber"><br>
+        Customer Name: <input type="text" name="CustomerName"><br>
+        Customer Email: <input type="text" name="CustomerEmail"><br><br>
+        <input type="submit" value="Add Customer Account">
+    </form>
+    <br>
+    <br>
+    <a href="{% url 'MainPage' %}"> Back to Home</a>
 </body>
 </html>
