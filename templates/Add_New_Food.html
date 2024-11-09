@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add New Food</title>
 </head>
 <body>
-
+    <form action="{% url 'AddMenu' %}">
+        Food Name: <input type="text" name="FoodName"><br>
+        Food Description:<input type="text" name="foodDescription"><br>
+        Food Price: <input type="number" name="foodPrice"><br>
+        Food Type: <input type="text" name="foodType"><br>
+        <input type="submit" value="Add to Menu">
+    </form>
 </body>
 </html>

@@ -23,6 +23,10 @@ def CreateCustomer(request):
     template = 'Create_Customer_Account.html'
     return render(request, template)
 
+def AddNewMenu(request):
+    template = 'Add_New_Food.html'
+    return render(request, template)
+
 def CustomerAccount(request):
     customers = models.Customer.objects.all()
     template = 'Customer_List.html'
@@ -31,7 +35,15 @@ def CustomerAccount(request):
     }
     return render(request, template, context)
 
+def AddMenu(request):
+    menu = models.Menu()
+    menu.FoodName = request.GET['FoodName']
+    menu.foodDescription = request.GET['foodDescription']
+    menu.foodPrice = request.GET['foodPrice']
+    menu.foodType = request.GET['foodType']
+    menu.save()
 
+    return HttpResponseRedirect(reverse('MainPage'))
 
 def SaveUser(request):
     customer = models.Customer()
