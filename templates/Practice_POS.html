@@ -9,7 +9,26 @@
     <h5>Welcome to Equinox Resto</h5>
 
     <br>
-    
+    <h2>Menu</h2>
+    <table>
+        <tr>
+            <th>Food Name</th>
+            <th>Food Description</th>
+            <th>Price</th>
+            <th>Food Type</th>
+        </tr>
+
+        {% for item in menuItems %}
+            
+            <tr>
+                <td>{{ item.FoodName }}</td>
+                <td>{{ item.foodDescription }}</td>
+                <td>{{ item.foodPrice }}</td>
+                <td>{{ item.foodType }}</td>
+            </tr>
+                  
+            {% endfor %}
+    </table>
     <br>
 
     <a href="{% url 'CreateCustomer' %}">Create Customer Account</a>

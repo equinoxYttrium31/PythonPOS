@@ -10,10 +10,12 @@ def tryWeb(request):
     return HttpResponse("Hello World")
 
 def MainPage(request):
+    menuList = models.Menu.objects.all()
     template = 'Practice_POS.html'
     context = {
         'title': 'Main Page',
         'body': 'This is the body of the main page.',
+        'menuItems': menuList,
     }
     return render(request, template, context)
 
@@ -28,6 +30,8 @@ def CustomerAccount(request):
         'customers': customers,
     }
     return render(request, template, context)
+
+
 
 def SaveUser(request):
     customer = models.Customer()
